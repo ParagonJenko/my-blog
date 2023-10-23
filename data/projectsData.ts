@@ -1,18 +1,16 @@
 const projectsData = [
   {
     title: 'BigMoji Generator',
-    description: `A website to be able to generate BigMoji's specifically for Slack`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    description: `SuperSizeEmojis: Elevate your Slack conversations with larger emojis in a grid layout!`,
+    imgSrc: '/static/images/bigmoji-website.png',
+    href: 'https://bigmoji.alexjenkinson.com/',
   },
-  // {
-  //   title: 'The Time Machine',
-  //   description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-  //   to the desired date and press "Go". No more worrying about lost keys or
-  //   forgotten headphones with this simple yet affordable solution.`,
-  //   imgSrc: '/static/images/time-machine.jpg',
-  //   href: '/blog/the-time-machine',
-  // },
+  {
+    title: 'Tarkov Community',
+    description: `This project is the creation of a central Escape From Tarkov website to showcase all the important links.`,
+    imgSrc: '/static/images/tarkovcommunity-website.png',
+    href: 'https://tarkovcommunity.com',
+  },
 ]
 
 export default projectsData
