@@ -1,0 +1,61 @@
+---
+title: BigMoji 2.0 Crafting Multiline Emojis with a Fresh Perspective
+date: '2023-10-30'
+tags: ['bigmoji', 'web']
+draft: true
+summary: Get ready for "BigMoji 2.0," the reincarnation of my multiline emoji project, where I'll share my refreshed perspective and introduce innovative techniques for crafting expressive multiline emojis.
+---
+
+![bigger-movie](/static/images/bigger-movie.jpg)
+
+So, you might remember that a while back, I embarked on a journey to create a JavaScript-based "emoji multiliner" called BigMoji. It was a bit like Frankenstein's monster, held together with code scraps and a lot of hope. But hey, it worked, and it was a fantastic learning experience. However, now that I've got a greater understanding of ES6 and JavaScript as a whole, I'm itching to revisit and revamp the project.
+
+But before we dive into the juicy techy details, let's set the stage with some basic terminology.
+
+## Terminology
+
+Here's a quick reference table for some key terms we'll be using:
+
+| Term     | Definition                                                  |
+| -------- | ----------------------------------------------------------- |
+| `item`   | Each whole image/gif                                        |
+| `grid`   | The layout that divides an `item` into `rows` and `columns` |
+| `row`    | A horizontal division within an `item`, indexed at `0`      |
+| `column` | A vertical division within an `item`, indexed at `0`        |
+
+Now that we've got our terminology in place, let's talk tech.
+
+## Previous Implementation
+
+In the original project, I made use of various code snippets and libraries, stitching them together to create the project. Here's what I used:
+
+- [gif.js](https://github.com/jnordberg/gif.js) and [gif.worker.js](https://github.com/jnordberg/gif.worker.js) by [jnordberg](https://github.com/jnordberg).
+- [gif-frames.js](https://github.com/benwiley4000/gif-frames) by [benwiley4000](https://github.com/benwiley4000).
+- [jszip.js](https://github.com/Stuk/jszip) by [Stuk](https://github.com/Stuk/jszip).
+
+These tools served me well, but technology never stands still. It's time to explore some newer options.
+
+## Exploring New Packages
+
+I've been scouring the NPM packages to find more up-to-date and exciting tools for my project. Here are a few that caught my eye:
+
+- [ImageScript](https://github.com/matmen/ImageScript)
+- [gif2sprite](https://www.npmjs.com/package/gif2sprite)
+- [canvas-gif](https://www.npmjs.com/package/@bobwombat/canvas-gif)
+- [gifsicle-wasm-browser](https://www.npmjs.com/package/gifsicle-wasm-browser)
+
+But the real gem I found is [jimp](https://github.com/jimp-dev/jimp). It not only offers powerful image manipulation capabilities but also includes [gifwrap](https://github.com/jimp-dev/gifwrap), which could handle all my GIF needs in one package.
+
+## The Next Implementation
+
+So, armed with my newfound knowledge of these shiny packages, here's what I'm planning for the next iteration of my JavaScript BigMoji maker:
+
+- I'll continue to use `jszip` as it's still well-maintained. If any issues arise, I've got a potential backup in `archiver`.
+
+- For image manipulation and GIF creation, I'll rely on the dynamic duo of `jimp` and `gifwrap`. These libraries are up-to-date and actively maintained.
+
+  - I did peek at [issue #153](https://github.com/jimp-dev/jimp/issues/153) in the `jimp` repository that dealt with memory problems. Fortunately, this shouldn't be a concern for our project. However, I'll keep in mind that I can process images using [Sharp](https://github.com/lovell/sharp) if the need arises.
+
+I'll also give the user interface a facelift, modernizing it a bit and cleaning up the copy. The core functionality will remain, but the experience will be sleeker and more user-friendly.
+
+So, stay tuned for the exciting journey ahead as I breathe new life into my JavaScript BigMoji project! It's time to turn this rough gem into a polished masterpiece. 💎✨
