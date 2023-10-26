@@ -59,3 +59,41 @@ So, armed with my newfound knowledge of these shiny packages, here's what I'm pl
 I'll also give the user interface a facelift, modernizing it a bit and cleaning up the copy. The core functionality will remain, but the experience will be sleeker and more user-friendly.
 
 So, stay tuned for the exciting journey ahead as I breathe new life into my JavaScript BigMoji project! It's time to turn this rough gem into a polished masterpiece. 💎✨
+
+- I actually came back to this the day after I wrote the above.
+- I played with ChatGPT and it looks like I can just use Sharp directly for this?
+- I came across a [Stackoverflow](https://stackoverflow.com/questions/76298323/create-gif-using-nodejs-and-sharp) that may provide me some
+
+- I was making some waves...in having nothing work. I thought I'd ChatGPT it just to get a gauge of how the program should flow.
+- However I found a Digital Ocean guide on using Sharp which has reallly helped.
+
+- Honestly ChatGPT is the hero, it's so good to just use as your rubber ducky. I got it to help pull me the logic on what the variable need to be for a grid alongisde rewriting the code to be dynamic. I checked it over and it worked perfectly!
+- JsZip doesn't seem to be working so I'm goint to try adm-zip which was updated a little later!
+- The cake was a lie, or in this case JsZip did work I was just not using it right.
+- I ended up going back to JsZip which worked perfectly with some nudging from ChatGPT to get me back on the right lines.
+
+- Now I ran into my big expected problem, that this is in NodeJS and will need a backend. Guess it's time to learn Express!
+- I called it a day here, I admit I tried to just get ChatGPT to do it all but it didn't work (shocked) so I'm going to try again next time!
+
+- However I now sit in the issue of the `sharp` package only runs in a NodeJS runtime so now the big question is...do I plug in another package or make this have a backend? An example to run a backend is [Vite Plugin Node](https://github.com/axe-me/vite-plugin-node)
+- I want this to be lightweight so let's go for looking at another package.
+
+I've attempted to use [ImageScript](https://imagescript.matmen.dev/Image#crop) but I couldn't figure it out based on the documentation.
+
+Okay I've moved to Jimp as originally planned, and it works in NodeJS environment but it's not working locally.
+
+I got very frustrated and was hitting lots of deadends trying to get Jimp to work in the browser so I just said HEY CHATGPT MAKE THIS WORK IN A BROWSER..and it did.
+
+It used pretty much the same code was in the non-Vite which made it much eaiser to understand what was happening.
+
+A bug I did find this when te grid elements are created, this extends the clientHeight meaning that the image continues to grow infinitely larger. Ideas of fixing that are either using the `clientWidth` which is a bit janky, or I thought of re-rendering the original image and only editing a clone of this. Either way it's small enough it's not blocking me from progressing with this.
+
+Oh this also looks to happen where it'll extend images to the maximum width that is not ideal. I'll need to find a clever way to set that width that isn't at that stage - potentially make the canvas outside of the draw image?
+
+I also didn't add any gif functionality yet, but this was on purpose because it wasn't in the plan today.
+
+I tried to boot this up into the GitHub pages that I've originally used but I was getting no where with the website just giving a generic error on trying to load it! So I just decided to push this up to Netlify and point the bigmoji subdomain - easy as pie. GitHub Pages sorry!
+
+I've also added two issues to come back to resolve and deleted the v2-vite branch to work from main.
+
+To do next is definitely to tidy up the `PrepareImages` code, because it's no longer preparing really. I also should split it out into `cropImage` and `cropGif` too! I actually just ran this through ChatGPT really quickly and it worked. I had to go through and tidy up a few bits but it's crazy how this tool just makes things take so little time.
