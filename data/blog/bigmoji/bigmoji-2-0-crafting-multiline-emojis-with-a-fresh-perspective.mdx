@@ -6,36 +6,38 @@ draft: true
 summary: Get ready for "BigMoji 2.0," the reincarnation of my multiline emoji project, where I'll share my refreshed perspective and introduce innovative techniques for crafting expressive multiline emojis.
 ---
 
+# BigMoji 2.0: Crafting Multiline Emojis with a Fresh Perspective
+
 ![bigger-movie](/static/images/bigger-movie.jpg)
 
-So, you might remember that a while back, I embarked on a journey to create a JavaScript-based "emoji multiliner" called BigMoji. It was a bit like Frankenstein's monster, held together with code scraps and a lot of hope. But hey, it worked, and it was a fantastic learning experience. However, now that I've got a greater understanding of ES6 and JavaScript as a whole, I'm itching to revisit and revamp the project.
+Ahoy there, fellow emoji enthusiasts! If you've been keeping tabs on the emoji landscape, you might remember BigMoji, my JavaScript-based "emoji multiliner" project. It was a Frankenstein's monster of code scraps and hope, but it got the job done and taught me a ton. Fast forward to today, armed with a better understanding of ES6 and JavaScript, I'm itching to revisit and revamp BigMoji in its glorious 2.0 version.
 
 But before we dive into the juicy techy details, let's set the stage with some basic terminology.
 
-## Terminology
+## Emoji Crafting Jargon
 
-Here's a quick reference table for some key terms we'll be using:
+Let's get our terms straight with this handy reference:
 
 | Term     | Definition                                                  |
 | -------- | ----------------------------------------------------------- |
-| `item`   | Each whole image/gif                                        |
+| `item`   | Each whole image or GIF                                     |
 | `grid`   | The layout that divides an `item` into `rows` and `columns` |
 | `row`    | A horizontal division within an `item`, indexed at `0`      |
 | `column` | A vertical division within an `item`, indexed at `0`        |
 
-Now that we've got our terminology in place, let's talk tech.
+Now that we've brushed up on our terminology, let's talk tech.
 
-## Previous Implementation
+## The Previous Iteration
 
-In the original project, I made use of various code snippets and libraries, stitching them together to create the project. Here's what I used:
+In the original BigMoji project, I Frankensteined my way through it, using various code snippets and libraries. Here's what got me through it:
 
 - [gif.js](https://github.com/jnordberg/gif.js) and [gif.worker.js](https://github.com/jnordberg/gif.worker.js) by [jnordberg](https://github.com/jnordberg).
 - [gif-frames.js](https://github.com/benwiley4000/gif-frames) by [benwiley4000](https://github.com/benwiley4000).
 - [jszip.js](https://github.com/Stuk/jszip) by [Stuk](https://github.com/Stuk/jszip).
 
-These tools served me well, but technology never stands still. It's time to explore some newer options.
+These tools did the job, but as we know, technology never stops evolving. It's time to explore some newer options.
 
-## Exploring New Packages
+## Discovering Fresh Packages
 
 I've been scouring the NPM packages to find more up-to-date and exciting tools for my project. Here are a few that caught my eye:
 
@@ -44,56 +46,85 @@ I've been scouring the NPM packages to find more up-to-date and exciting tools f
 - [canvas-gif](https://www.npmjs.com/package/@bobwombat/canvas-gif)
 - [gifsicle-wasm-browser](https://www.npmjs.com/package/gifsicle-wasm-browser)
 
-But the real gem I found is [jimp](https://github.com/jimp-dev/jimp). It not only offers powerful image manipulation capabilities but also includes [gifwrap](https://github.com/jimp-dev/gifwrap), which could handle all my GIF needs in one package.
+But the real game-changer I stumbled upon is [jimp](https://github.com/jimp-dev/jimp). It's not just a powerful image manipulation tool, but it also includes [gifwrap](https://github.com/jimp-dev/gifwrap), a versatile solution for all your GIF needs, all in one package.
 
 ## The Next Implementation
 
-So, armed with my newfound knowledge of these shiny packages, here's what I'm planning for the next iteration of my JavaScript BigMoji maker:
+Now, armed with my newfound knowledge of these exciting packages, here's the plan for the next thrilling act of the JavaScript BigMoji maker:
 
-- I'll continue to use `jszip` as it's still well-maintained. If any issues arise, I've got a potential backup in `archiver`.
+    I'll continue to wield the trusty jszip as it's still well-maintained. And if any issues come knocking, I've got a potential backup with archiver.
 
-- For image manipulation and GIF creation, I'll rely on the dynamic duo of `jimp` and `gifwrap`. These libraries are up-to-date and actively maintained.
+    For image manipulation and GIF creation, I'm turning to the dynamic duo of jimp and gifwrap. These libraries are as fresh as a sea breeze and actively maintained.
+        I did a quick dive into issue #153 in the jimp repository that dealt with memory problems. Luckily, we don't need to lose sleep over it for our project. But just in case, I'll keep Sharp in my toolkit for image processing wizardry.
 
-  - I did peek at [issue #153](https://github.com/jimp-dev/jimp/issues/153) in the `jimp` repository that dealt with memory problems. Fortunately, this shouldn't be a concern for our project. However, I'll keep in mind that I can process images using [Sharp](https://github.com/lovell/sharp) if the need arises.
+I'm also giving the user interface a fresh coat of paint, making it more modern and user-friendly. The core mojo remains intact, but the experience will be sleeker and shinier!
 
-I'll also give the user interface a facelift, modernizing it a bit and cleaning up the copy. The core functionality will remain, but the experience will be sleeker and more user-friendly.
+So, fasten your seatbelts for the thrilling journey ahead as I breathe new life into my JavaScript BigMoji project! It's time to transform this rough gem into a polished masterpiece. 💎✨
 
-So, stay tuned for the exciting journey ahead as I breathe new life into my JavaScript BigMoji project! It's time to turn this rough gem into a polished masterpiece. 💎✨
+And here's the exciting part – I actually came back to this the day after I wrote the above. I played around with ChatGPT and realized that I can directly use Sharp for some real-time magic! ✨
 
-- I actually came back to this the day after I wrote the above.
-- I played with ChatGPT and it looks like I can just use Sharp directly for this?
-- I came across a [Stackoverflow](https://stackoverflow.com/questions/76298323/create-gif-using-nodejs-and-sharp) that may provide me some
+I even stumbled upon a Stack Overflow thread that might provide some answers to my GIF creation quests.
 
-- I was making some waves...in having nothing work. I thought I'd ChatGPT it just to get a gauge of how the program should flow.
-- However I found a Digital Ocean guide on using Sharp which has reallly helped.
+I must admit, I was making waves, but nothing seemed to work. So, I turned to ChatGPT to get a sense of how the program should flow. It was like having my coding rubber ducky by my side.
 
-- Honestly ChatGPT is the hero, it's so good to just use as your rubber ducky. I got it to help pull me the logic on what the variable need to be for a grid alongisde rewriting the code to be dynamic. I checked it over and it worked perfectly!
-- JsZip doesn't seem to be working so I'm goint to try adm-zip which was updated a little later!
-- The cake was a lie, or in this case JsZip did work I was just not using it right.
-- I ended up going back to JsZip which worked perfectly with some nudging from ChatGPT to get me back on the right lines.
+However, my adventures took an unexpected turn when I found a Digital Ocean guide on using Sharp. It was like finding the treasure map I needed!
 
-- Now I ran into my big expected problem, that this is in NodeJS and will need a backend. Guess it's time to learn Express!
-- I called it a day here, I admit I tried to just get ChatGPT to do it all but it didn't work (shocked) so I'm going to try again next time!
+ChatGPT truly is a hero. It's the ultimate tool to pull me out of logic conundrums and guide me to the right path. It helped me understand what variables were needed for a dynamic grid, and with its assistance, I rewrote the code, making it dynamic and efficient. It's like having a coding buddy who never sleeps.
 
-- However I now sit in the issue of the `sharp` package only runs in a NodeJS runtime so now the big question is...do I plug in another package or make this have a backend? An example to run a backend is [Vite Plugin Node](https://github.com/axe-me/vite-plugin-node)
-- I want this to be lightweight so let's go for looking at another package.
+But then, the plot thickened – JsZip didn't seem to be playing nice. So, I decided to try adm-zip, a newer alternative that might just do the trick. However, as it turned out, the cake was a lie! JsZip was perfectly fine; I was just not using it right. It was ChatGPT who nudged me back on the right track.
 
-I've attempted to use [ImageScript](https://imagescript.matmen.dev/Image#crop) but I couldn't figure it out based on the documentation.
+Now, I faced my big expected challenge – my project was in NodeJS and needed a backend. It was time to embark on a quest to learn Express! But, I have to confess, I tried to make ChatGPT do it all, and to my surprise, it didn't work (shocking, right?). So, I'm gearing up for another round!
 
-Okay I've moved to Jimp as originally planned, and it works in NodeJS environment but it's not working locally.
+Now, here's where I found myself in a dilemma. The Sharp package runs only in a NodeJS runtime, and the big question is, should I plug in another package or give this project a backend? I'm leaning towards a lightweight solution, so let's explore other packages.
 
-I got very frustrated and was hitting lots of deadends trying to get Jimp to work in the browser so I just said HEY CHATGPT MAKE THIS WORK IN A BROWSER..and it did.
+I even attempted to use ImageScript, but alas, the documentation left me scratching my head. Sometimes, even with the best tools, the route is not clear!
 
-It used pretty much the same code was in the non-Vite which made it much eaiser to understand what was happening.
+But fear not, I made a wise decision – I moved to Jimp, just as I had originally planned. It worked beautifully in a NodeJS environment, but there was a twist in the tale. It didn't work locally which was my issue with Sharp.
 
-A bug I did find this when te grid elements are created, this extends the clientHeight meaning that the image continues to grow infinitely larger. Ideas of fixing that are either using the `clientWidth` which is a bit janky, or I thought of re-rendering the original image and only editing a clone of this. Either way it's small enough it's not blocking me from progressing with this.
+Frustration crept in as I hit dead ends trying to make Jimp work in the browser. So, I took a bold step and said, "Hey ChatGPT, make this work in a browser," and it did! It was like magic, and it used almost the same code as in the non-Vite version, making it much easier to understand what was happening.
 
-Oh this also looks to happen where it'll extend images to the maximum width that is not ideal. I'll need to find a clever way to set that width that isn't at that stage - potentially make the canvas outside of the draw image?
+However, I stumbled upon a tiny bug. The grid elements created an image that extended the clientHeight, causing the image to grow infinitely larger. I brainstormed a couple of solutions – either use the clientWidth, which was a bit janky, or re-render the original image and only edit a clone. Either way, it was a minor hiccup, and it didn't block my progress.
 
-I also didn't add any gif functionality yet, but this was on purpose because it wasn't in the plan today.
+Oh, and there's another twist – images extended to the maximum width, which wasn't ideal. I need to find a clever way to set that width without going through that stage. Perhaps, I can make the canvas outside of the draw image to avoid this hiccup.
 
-I tried to boot this up into the GitHub pages that I've originally used but I was getting no where with the website just giving a generic error on trying to load it! So I just decided to push this up to Netlify and point the bigmoji subdomain - easy as pie. GitHub Pages sorry!
+I didn't add any GIF functionality yet, but that was intentional because it wasn't in the plan for today. GIFs deserve a whole new chapter!
 
-I've also added two issues to come back to resolve and deleted the v2-vite branch to work from main.
+I attempted to boot this up on GitHub Pages, which I had used originally, but I hit a roadblock. The website gave me a generic error when I tried to load it. So, I decided to take the easy route and pushed this project up to Netlify, pointing the bigmoji subdomain. Farewell, GitHub Pages you were good while you lasted!
 
-To do next is definitely to tidy up the `PrepareImages` code, because it's no longer preparing really. I also should split it out into `cropImage` and `cropGif` too! I actually just ran this through ChatGPT really quickly and it worked. I had to go through and tidy up a few bits but it's crazy how this tool just makes things take so little time.
+I've also added a couple of issues to come back and resolve, and I deleted the v2-vite branch to work from the main branch.
+
+What's next on the agenda? It's time to tidy up the PrepareImages code, which is no longer about preparing but more about cropping. I should also split it into cropImage and cropGif. I actually ran this through ChatGPT quickly, and it worked like a charm. I had to tidy up a few bits, but it's amazing how this tool streamlines tasks and makes everything seem so easy!
+
+But here's a twist I didn't see coming – I decided to take all my code and see how it should look in an ExpressJS format, using ChatGPT 3.5. It made sense, and it gave me a glimpse into a whole new world. I've never experimented with ExpressJS, so having an example of how it works in context is invaluable.
+
+However, that's a story for another day, and for now, I'm on a mission to add GIF functionality!
+
+But here's where I got a bit too ambitious and tried to let ChatGPT do all the heavy lifting, and guess what? It didn't pay off. In fact, it cost me a couple of hours as I tried to figure out how ChatGPT was altering the code. It's a good lesson – sometimes, you've got to dive back into the code and break it down. I decided this was out of scope for my current attempts because I was burning out from this specific set of code.
+
+Here are the key takeaways for the code:
+
+````main.js
+
+Of course, the first step is to remove the selectedFile.type check, as it throws an error for GIFs.
+
+In the uploadForm listener, we should split the logic between processing an image and processing a GIF image.
+
+In renderPreview, we want to display GIFs as they are, as I don't think we can animate them after drawing the grid lines.
+
+imageProcessing.js:
+
+I believe we'll need to split the functionality for creating smaller images into two separate paths – one for GIFs and one for still images. The same process may not apply here.
+
+However, I need to figure out how GIFs work. I assume I need to pull each frame, crop each frame, and then assemble them back into a GIF?
+
+fileIO.js:
+
+The createZipFile function has a hardcoded .png extension. We need to either have a new parameter for this or find a way to infer it```
+
+````
+
+So, that wraps up my adventures for this week. We're not quite at the MVP of the product because it no longer supports GIF files. But fear not, there are exciting events on the horizon, and I'd love to dive back into that project to play with some animated-style magic!
+
+Stay tuned for more adventures in the world of coding and creativity. BigMoji 2.0 is on the horizon, and it's going to be a blast! 🚀💻🌟
+
+The End... for now. 🎬✨
